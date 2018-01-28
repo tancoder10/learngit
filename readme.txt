@@ -6,3 +6,5 @@ Git is free sofware distributed under theGPL.
 Git has a mutable index called stage.
 
 github is ……
+
+i2
