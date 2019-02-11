@@ -1,0 +1,2 @@
+D:\git\gopath\bin>rsrc.exe -manifest doubleW.manifest -o doubleW.syso -ico doubl
+eW.ico
