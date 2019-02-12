@@ -8,6 +8,12 @@ import (
 )
 
 func main() {
+
+	//先关闭了wechat
+	down_w := exec.Command("taskkill.exe", "/f", "/im", "WeChat.exe")
+	down_w.Run()
+	time.Sleep(1 * time.Second)
+
 	now := time.Now().Unix()
 	//月、日、年
 	endtime, _ := time.Parse("01/02/2006", "03/08/2019")
@@ -44,12 +50,12 @@ func main() {
 	}
 
 	//启动微信
-	for a := 0; a < 2; a++ {
-		cmd := exec.Command("cmd.exe", "/c", "start "+wechat_path)
-		cmd.Run()
-	}
+	//for a := 0; a < 2; a++ {
+	cmd := exec.Command("cmd.exe", "/c", "start "+wechat_path+"&start "+wechat_path)
+	cmd.Run()
+	//}
 
 	tip_cmd := exec.Command("echo", "双微信启动成完成!")
 	buf, _ := tip_cmd.Output() // 错误处理略
-  fmt.Println(string(buf))
+	fmt.Println(string(buf))
 }
